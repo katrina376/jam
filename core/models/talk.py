@@ -21,7 +21,7 @@ class TalkManager(models.Manager):
             Instance of the created talk.
 
         Raises:
-            ValidatioError: If no `user` is assigned.
+            ValidationError: If no `user` is assigned.
         """
 
         speakers = set(kwargs.pop('speakers', []))
@@ -57,7 +57,7 @@ class Talk(models.Model):
         order (int): Number of the order for talks in the same section.
             Defaults to 0.
         speakers (:obj:`User`): Speaker(s) of the talk.
-        section (:obj:`Section`, optional): Section of the talk belonging to.
+        section (:obj:`Section`): Section of the talk belonging to.
         objects (:obj:`TalkManager`): Manager of Talk model.
     """
 
